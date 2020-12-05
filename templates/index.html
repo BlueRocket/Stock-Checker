@@ -1,0 +1,52 @@
+<!-- By: Universal Impact -->
+<!-- https://github.com/universalimpact -->
+
+<!-- Boostrap HTML CSS for Design -->
+<!DOCTYPE html>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<html lang="en">
+<center>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Search Stocks</title>
+    <header>
+        <p></p>
+        <h3>Stock Search App</h3>
+        <h6><i>Developed by <a href= "https://github.com/universalimpact">universalimpact</a></i></h6>
+    </header>
+</head>
+
+<!-- News API Header with User Form -->
+<hr style="height:4px;border:none;color:black;background-color:black;">
+<body>
+    <h1></h1>
+    <table style="width:30%">
+        <tr>
+          <th><h4>Enter Stock Symbols:</h4></th>
+          <th>
+       
+    <form action='/info/' method="POST">
+        <input height = "400" width = "100" type="text" placeholder="Separate by 1 Space" name='stock'>
+    </th>
+        </tr>
+    </table>
+        </table>
+        <h4></h4>
+        <button type="submit" style="background-color:black;color:white">Get Stock Info</button>
+    </form>
+    <hr style="height:4px;border:none;color:black;background-color:black;">
+</center>
+ 
+<!-- Display all stock information -->
+{% for symbol in news %}
+  <center>
+  <h4><a href = "{{news[symbol]['url']}}" target="_blank">{{news[symbol]['name']}}</a></h4>
+  <p>{{news[symbol]['hq_address']}}</p>
+  <hr style="height:1px;border:none;color:black;background-color:black;">
+</center>
+{% endfor %}    
+</body>
+</html>
